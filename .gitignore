@@ -1,0 +1,15 @@
+# Original full-size photo — kept locally, not deployed
+photo-original.jpg
+
+# Private PhD application notes — must never reach a public repo
+Canada_PhD_Psychology_2026.xlsx
+create_phd_table.py
+
+# Local Claude Code config — contains local file paths, not for publishing
+.claude/
+
+# Stray VSIX download, unrelated to the site
+Microsoft.VisualStudio.Services.VSIXPackage
+icon.png
+
+.DS_Store

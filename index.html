@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Huijing Sun — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..800&family=Karla:wght@400..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <span class="logo">HJ</span>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero">
+      <div class="hero-content">
+        <h1>Hi, I'm <span class="accent">Huijing Sun</span></h1>
+        <p class="tagline">
+          M.Ed. student in Mental Health Education, Shandong Normal University
+        </p>
+        <ul class="hero-tags">
+          <li>EEG</li>
+          <li>Longitudinal Network Analysis</li>
+          <li>Adolescent Depression</li>
+          <li>TMS Intervention</li>
+        </ul>
+        <div class="hero-links">
+          <a href="#research" class="btn">View Research</a>
+          <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2>About Me</h2>
+        <div class="about-grid">
+          <div class="about-photo-col">
+            <img src="photo.jpg" alt="Huijing Sun" class="profile-photo" />
+          </div>
+          <div class="about-right">
+            <div class="about-text">
+              <p>
+                I'm a master's student in Mental Health Education at Shandong
+                Normal University. I study how depression emerges and persists in
+                adolescence, combining EEG, longitudinal cohort data, and network
+                analysis — and how brain stimulation can change its course.
+              </p>
+              <p>
+                What draws me is what longitudinal data can show that a single
+                snapshot cannot: which symptoms drive others over time, which
+                neural markers track that process, and who is most likely to
+                respond to intervention.
+              </p>
+              <p>
+                My training is applied as well as quantitative. Alongside
+                coursework in mental health education, I spent a semester
+                teaching at a secondary school. That work keeps my research
+                grounded — the symptoms I model in a network are the ones I've
+                heard adolescents describe in their own words.
+              </p>
+              <p>
+                What I ultimately want is for this work to reach the young people
+                it's about: to help children and adolescents find support before
+                difficulty hardens into disorder, and to build the evidence that
+                makes such support actually work.
+              </p>
+            </div>
+
+            <div class="education">
+              <h3>Education</h3>
+              <ul class="timeline">
+                <li class="tl-item">
+                  <span class="tl-period">2024.09 – 2027.06 (expected)</span>
+                  <span class="tl-title">M.Ed. in Mental Health Education</span>
+                  <span class="tl-detail">
+                    Shandong Normal University · Advisor: Prof. Kangcheng Wang
+                  </span>
+                </li>
+              </ul>
+              <!-- TODO: fill in your TOEFL score and test date once you've taken it -->
+              <p class="edu-extra">TOEFL: [score] · [test date]</p>
+            </div>
+          </div><!-- .about-right -->
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="container">
+        <h2>Research</h2>
+
+        <div class="interests">
+          <div class="interest-item">
+            <h3>Mechanisms of adolescent depression</h3>
+            <p>
+              How depressive symptoms reinforce one another over time, modeled with
+              multi-wave cohort data and temporal network analysis.
+            </p>
+          </div>
+          <div class="interest-item">
+            <h3>Electrophysiological markers</h3>
+            <p>
+              Resting-state and task-based EEG signatures that distinguish at-risk
+              adolescents and track change across development.
+            </p>
+          </div>
+          <div class="interest-item">
+            <h3>Intervention and response prediction</h3>
+            <p>
+              Whether TMS shifts symptom structure, and which baseline features
+              predict who benefits from it.
+            </p>
+          </div>
+        </div>
+
+        <h3 class="subhead">Methods &amp; Tools</h3>
+        <div class="skill-groups">
+          <div class="skills">
+            <h4>Research Methods</h4>
+            <ul class="skill-list">
+              <li>EEG acquisition &amp; preprocessing</li>
+              <li>ERP analysis</li>
+              <li>Resting-state power &amp; connectivity</li>
+              <li>Symptom network analysis</li>
+              <li>Cross-lagged panel networks (CLPN)</li>
+              <li>Longitudinal cohort management</li>
+              <li>Adolescent mental health assessment</li>
+              <li>rTMS protocol administration</li>
+            </ul>
+          </div>
+          <div class="skills">
+            <h4>Tools</h4>
+            <ul class="skill-list">
+              <li>R</li>
+              <li>Python</li>
+              <li>MATLAB</li>
+              <li>SPSS</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="subhead">Research &amp; Teaching Experience</h3>
+        <ul class="timeline">
+          <li class="tl-item">
+            <span class="tl-period">2024.07 – Present</span>
+            <span class="tl-title">
+              Shandong Adolescent Neuroimaging Database (SAND)
+            </span>
+            <span class="tl-detail">
+              Data collection across modalities — structural MRI, fMRI, cognitive
+              assessments, and questionnaires.
+            </span>
+          </li>
+          <li class="tl-item">
+            <span class="tl-period">2025.02 – 2026.06</span>
+            <span class="tl-title">
+              iTBS Treatment for Adolescent Depression
+            </span>
+            <span class="tl-detail">
+              Data collection.
+              <!-- TODO: once you start the EEG analysis, extend this to
+                   "Data collection and EEG data analysis." -->
+            </span>
+          </li>
+          <li class="tl-item tl-teaching">
+            <span class="tl-period">2025.09 – 2025.12 <span class="tl-tag">Teaching</span></span>
+            <span class="tl-title">
+              Psychology Teacher (Intern) · Jinan Foreign Language School
+            </span>
+            <span class="tl-detail">
+              Taught mental health lessons, facilitated group counseling
+              activities, and conducted individual student interviews.
+            </span>
+          </li>
+          <li class="tl-item">
+            <span class="tl-period">2025.12 – 2026.03</span>
+            <span class="tl-title">
+              fNIRS Study of Parent–Adolescent Communication
+            </span>
+            <span class="tl-detail">
+              Data collection.
+            </span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="container">
+        <h2>Publications</h2>
+        <p class="pub-note">
+          <span class="me">Bold</span> denotes my name.
+          <!-- TODO: replace every bracketed placeholder below with real titles and author lists -->
+        </p>
+
+        <div class="pub-group">
+          <h3>Under Review <span class="count">2</span></h3>
+          <ol class="pub-list">
+            <li class="pub-item">
+              <span class="pub-authors">
+                <span class="me">Sun, H.</span>, Zou, W., Wang, D., Zhang, Y.,
+                Bai, C., Li, W., Xiao, Y., Niu, X., Shao, X., Wang, X.,
+                Hommel, B., Yang, Y., &amp; Wang, K.
+              </span>
+              <span class="pub-title">
+                Neural mechanisms of impaired self-compassion in depressed
+                adolescents during social exclusion.
+              </span>
+              <div class="pub-links">
+                <span class="pub-status">Under review</span>
+              </div>
+              <details class="abstract">
+                <summary>Abstract</summary>
+                <div class="abstract-body">
+                  <p>
+                    <strong>Background:</strong> Self-compassion has shown to be an
+                    effective emotion regulation strategy, but its neural mechanisms
+                    remain understudied in adolescents with depression who suffer from
+                    social exclusion. This study employed event-related potentials to
+                    investigate the psychophysiological mechanisms underlying impaired
+                    self-compassion in adolescents with depression during social
+                    exclusion.
+                  </p>
+                  <p>
+                    <strong>Methods:</strong> Thirty-seven adolescents with major
+                    depressive disorder (age = 16.46 ± 2.02) and thirty-two
+                    demographically matched healthy controls (age = 16.54 ± 2.29)
+                    completed a social exclusion scenario imagination task. This task
+                    presented participants with social exclusion scenarios, asking them
+                    to imagine themselves as the excluded individual and subsequently
+                    rate their negative emotions. The regulation session required
+                    participants to use self-compassionate statements to regulate their
+                    emotional responses while imagining and rate how much self-compassion
+                    they have engaged in; the non-regulation required them not to use
+                    those statements and rate their negative emotions immediately
+                    following imagination. EEG signals were recorded during the task, and
+                    the late positive potential (LPP) was analyzed to examine the neural
+                    responses associated with self-compassion regulation following social
+                    exclusion.
+                  </p>
+                  <p>
+                    <strong>Results:</strong> Compared with the non-regulation condition,
+                    both groups showed less negative emotion during the self-compassion
+                    regulation condition. Adolescents with depression exhibited
+                    significantly lower self-compassion ratings than healthy controls,
+                    and showed a significantly smaller decrease in negative emotions.
+                    Higher self-compassion ratings were correlated with greater emotion
+                    regulation effect, particularly in adolescents with depression.
+                    Furthermore, LPP amplitudes were significantly higher in adolescents
+                    with depression than in healthy controls during both regulation and
+                    non-regulation conditions.
+                  </p>
+                  <p>
+                    <strong>Conclusions:</strong> Adolescents with depression were
+                    characterized by impairment in using self-compassion to downregulate
+                    negative emotions when confronted with social exclusion. LPP
+                    amplitudes were consistently elevated in adolescents with depression,
+                    underscoring their potential as a critical focus for
+                    psychophysiologically-informed therapies.
+                  </p>
+                </div>
+              </details>
+            </li>
+            <li class="pub-item">
+              <span class="pub-authors">
+                Tian, X., <span class="me">Sun, H.</span>, Li, X., Wang, D.,
+                Cao, Y., Niu, X., Kong, T., Miao, Z., Zhao, L., Lyu, C.,
+                Zheng, D., Zhang, Y., Xu, F., Cao, A., Zhu, X., Yang, Y.,
+                Che, X., &amp; Wang, K.
+              </span>
+              <span class="pub-title">
+                A randomized controlled trial protocol comparing 10 Hz rTMS and
+                iTBS for adolescent depression: Clinical efficacy, neurocognitive
+                and neurobiological mechanisms.
+              </span>
+              <div class="pub-links">
+                <span class="pub-status">Under review</span>
+                <span class="pub-type">Study protocol</span>
+                <span class="pub-note-inline">Co-first author</span>
+              </div>
+              <details class="abstract">
+                <summary>Abstract</summary>
+                <div class="abstract-body">
+                  <p>
+                    <strong>Background:</strong> High-frequency repetitive transcranial
+                    magnetic stimulation (rTMS) is a well-established treatment for major
+                    depressive disorder. Intermittent theta burst stimulation (iTBS), a
+                    time-efficient form of rTMS, is increasingly being adopted in clinical
+                    practice because of its comparable efficacy and substantially shorter
+                    treatment duration. However, direct comparisons between 10 Hz rTMS and
+                    iTBS in adolescents with major depressive disorder are limited, and
+                    their relative clinical efficacy, neurocognitive effects, and the
+                    underlying neurobiological mechanisms remain unclear.
+                  </p>
+                  <p>
+                    <strong>Methods:</strong> The study will employ a randomized,
+                    double-blind controlled trial design. A total of 80 adolescents with
+                    major depressive disorder will be recruited from Shandong Mental
+                    Health Center and randomly assigned in a 1:1 ratio to receive either
+                    10 Hz rTMS or iTBS as an adjunctive treatment to antidepressant
+                    medication. Patients will undergo clinical, neurocognitive, and
+                    multimodal neurobiological assessments at baseline (T0) and
+                    post-treatment (T1), including structural MRI, resting-state and
+                    task-based functional MRI, arterial spin labeling, resting-state
+                    electroencephalography (EEG), and TMS-EEG. Clinical assessments will
+                    additionally be conducted at a 1-month follow-up (T2). The primary
+                    outcome will be the change in depressive symptom severity from
+                    baseline to post-treatment. Secondary outcomes will include changes in
+                    anxiety symptoms, neurocognitive performance, neuroimaging measures,
+                    neurophysiological markers, and treatment safety and tolerability.
+                  </p>
+                  <p>
+                    <strong>Discussion:</strong> This trial will be a critical randomized
+                    controlled study to directly compare 10 Hz rTMS and iTBS in
+                    adolescents with major depressive disorder. By integrating clinical,
+                    neurocognitive, and multimodal neuroimaging measures, the study will
+                    provide important evidence regarding the comparative efficacy and
+                    mechanisms of these two stimulation protocols and may inform the
+                    development of more personalized neuromodulation strategies for
+                    adolescent depression.
+                  </p>
+                </div>
+              </details>
+            </li>
+          </ol>
+        </div>
+
+        <div class="pub-group">
+          <h3>In Preparation <span class="count">2</span></h3>
+          <ol class="pub-list">
+            <li class="pub-item">
+              <span class="pub-authors"><span class="me">Sun, H.</span>, &amp; [Advisor, B.]</span>
+              <span class="pub-title">[Working title / topic].</span>
+              <span class="pub-status status-prep">In preparation</span>
+            </li>
+            <li class="pub-item">
+              <span class="pub-authors"><span class="me">Sun, H.</span>, &amp; [Advisor, B.]</span>
+              <span class="pub-title">[Working title / topic].</span>
+              <span class="pub-status status-prep">In preparation</span>
+            </li>
+          </ol>
+        </div>
+
+        <div class="pub-group">
+          <h3>Co-authored <span class="count">2</span></h3>
+          <ol class="pub-list">
+            <li class="pub-item">
+              <span class="pub-authors">
+                Lu, C., Wang, D., Cao, Y., Hu, Y., Yang, Y., <span class="me">Sun, H.</span>,
+                Tian, X., Kong, L., &amp; Wang, K. (2026).
+              </span>
+              <span class="pub-title">
+                Network based associations between peer rejection and adolescent
+                depression: Evidence from general population and clinical samples.
+              </span>
+              <span class="pub-venue"><em>BMC Psychology</em>, 14, 1021.</span>
+              <div class="pub-links">
+                <span class="pub-status status-pub">Published</span>
+                <a class="link" href="https://doi.org/10.1186/s40359-026-04731-y" target="_blank" rel="noopener">DOI →</a>
+              </div>
+              <!-- Adjust to what you actually did — keep it factual. -->
+              <span class="pub-contrib">
+                My role: participant recruitment and questionnaire data collection
+                across the general-population and clinical samples.
+              </span>
+            </li>
+            <li class="pub-item">
+              <span class="pub-authors">
+                Li, S., Tian, X., Zhang, Y., Yang, Y., <span class="me">Sun, H.</span>,
+                Chen, J., Xu, D., Xu, F., Zhu, X., Wang, K., &amp; Qiao, D. (2025).
+              </span>
+              <span class="pub-title">
+                Non-suicidal self-injury links with multidimensional cognitive
+                dysfunctions in adolescents with depression.
+              </span>
+              <span class="pub-venue"><em>BMC Psychiatry</em>, 26, 71.</span>
+              <div class="pub-links">
+                <span class="pub-status status-pub">Published</span>
+                <a class="link" href="https://doi.org/10.1186/s12888-025-07701-7" target="_blank" rel="noopener">DOI →</a>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2>Get in Touch</h2>
+        <p>I'm open to research collaborations, PhD opportunities, and conversations about adolescent mental health.</p>
+        <p class="contact-note">
+          I'm still early in my training and know there's a great deal I have yet
+          to learn. If any of this overlaps with what you work on, I would be
+          grateful for the chance to learn from you — and glad simply to hear
+          your thoughts.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:huijings2001@gmail.com" class="btn">Email Me</a>
+          <a href="https://github.com/SunnyBeaO1" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
+          <a href="https://www.linkedin.com/in/huijing-sun-a97a83330/en/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Huijing Sun. Built with HTML &amp; CSS.</p>
+  </footer>
+</body>
+</html>

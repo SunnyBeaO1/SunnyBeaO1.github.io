@@ -1,0 +1,638 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #faf7f5;
+  --surface: #f1eae7;
+  --border: #e3d8d4;
+  --text: #322f2d;
+  --muted: #79716d;
+  --accent: #a97482;
+  --accent-hover: #8e5d6b;
+  --accent2: #7f9c8a;
+  --accent2-text: #5a7b68;
+  --accent-soft: rgba(169, 116, 130, 0.12);
+  --accent2-soft: rgba(127, 156, 138, 0.16);
+  --header-bg: rgba(250, 247, 245, 0.88);
+  --width: 720px;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Global type scale — every rem below keys off this. Lower it to shrink the whole page. */
+  font-size: 16px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .logo {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  letter-spacing: -0.01em;
+}
+
+/* ── Nav ── */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--header-bg);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+nav {
+  max-width: var(--width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: var(--text);
+}
+
+/* ── Container ── */
+.container {
+  max-width: var(--width);
+  margin: 0 auto;
+  padding: 2.25rem 1.5rem;
+}
+
+/* ── Hero ── */
+#hero {
+  min-height: min(55vh, 380px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.2rem, 5vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.tagline {
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.hero-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.hero-tags li {
+  background: var(--accent2-soft);
+  color: var(--accent2-text);
+  padding: 0.25rem 0.7rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.hero-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  background: var(--accent);
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+.btn:hover {
+  background: var(--accent-hover);
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── Section headings ── */
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  position: relative;
+  display: inline-block;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 40px;
+  background: var(--accent2);
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+/* ── About ── */
+#about {
+  border-top: 1px solid var(--border);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.75rem;
+  align-items: start;
+}
+
+.about-photo-col {
+  flex-shrink: 0;
+}
+
+.profile-photo {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 50%;
+  border: 3px solid var(--border);
+  display: block;
+}
+
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about-text p {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+.skills h4 {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.skill-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-list li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+/* ── Timeline (education, research experience, teaching) ── */
+.education h3 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.timeline {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tl-item {
+  display: flex;
+  flex-direction: column;
+  border-left: 2px solid var(--border);
+  padding-left: 1rem;
+}
+
+.tl-period {
+  font-size: 0.8rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.tl-title {
+  font-weight: 600;
+  font-size: 0.98rem;
+}
+
+.tl-detail {
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.edu-extra {
+  margin-top: 0.75rem;
+  padding-left: 1rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+/* ── Skill groups ── */
+.skill-groups {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+/* ── Research ── */
+#research {
+  border-top: 1px solid var(--border);
+}
+
+.interests {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.interest-item h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.interest-item h3::before {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 24px;
+  background: var(--accent2);
+  border-radius: 2px;
+  margin-bottom: 0.6rem;
+}
+
+.interest-item p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.subhead {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.tl-tag {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0.05rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  vertical-align: 1px;
+}
+
+/* Teaching entries use the green accent so they read apart from research ones. */
+.tl-teaching {
+  border-left-color: var(--accent2);
+}
+
+.tl-teaching .tl-period {
+  color: var(--accent2-text);
+}
+
+.tl-teaching .tl-tag {
+  background: var(--accent2-soft);
+  color: var(--accent2-text);
+}
+
+.link {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: var(--accent-hover);
+}
+
+/* ── Publications ── */
+#publications {
+  border-top: 1px solid var(--border);
+}
+
+.pub-note {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.pub-group {
+  margin-bottom: 1.25rem;
+}
+
+.pub-group:last-child {
+  margin-bottom: 0;
+}
+
+.pub-group h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.count {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.05rem 0.5rem;
+  border-radius: 999px;
+}
+
+.pub-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pub-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  border-left: 2px solid var(--border);
+  padding-left: 1rem;
+}
+
+.pub-authors {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.me {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.pub-title {
+  font-size: 1rem;
+}
+
+.pub-venue {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.pub-links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.4rem;
+}
+
+.pub-links .pub-status {
+  margin-top: 0;
+}
+
+.pub-status {
+  align-self: flex-start;
+  margin-top: 0.3rem;
+  background: var(--accent-soft);
+  color: var(--accent-hover);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.15rem 0.6rem;
+  border-radius: 4px;
+}
+
+.status-prep {
+  background: var(--surface);
+  color: var(--muted);
+}
+
+.status-pub {
+  background: var(--accent2-soft);
+  color: var(--accent2-text);
+}
+
+/* Article-type pill (e.g. "Study protocol") — outlined so it reads as a
+   classification, not a status. */
+.pub-type {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 0.12rem 0.55rem;
+  border-radius: 4px;
+}
+
+/* Sits next to the status pill — e.g. "Co-first author". */
+.pub-note-inline {
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* Collapsible abstract — <details>/<summary>, no JS needed. */
+.abstract {
+  margin-top: 0.5rem;
+}
+
+.abstract summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  list-style: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.15s ease;
+}
+
+.abstract summary::-webkit-details-marker {
+  display: none;
+}
+
+.abstract summary::before {
+  content: "▸";
+  font-size: 0.7rem;
+  transition: transform 0.15s ease;
+}
+
+.abstract[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.abstract summary:hover {
+  color: var(--accent);
+}
+
+.abstract-body {
+  margin-top: 0.5rem;
+  padding: 0.75rem 0.9rem;
+  background: var(--surface);
+  border-radius: 6px;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--muted);
+  text-align: justify;
+}
+
+.abstract-body p + p {
+  margin-top: 0.55rem;
+}
+
+.abstract-body strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.pub-contrib {
+  margin-top: 0.45rem;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* ── Contact ── */
+#contact {
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+#contact p {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+#contact .contact-note {
+  max-width: 46ch;
+  margin: -0.6rem auto 1.5rem;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.contact-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Footer ── */
+footer {
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 1.25rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .profile-photo {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto;
+  }
+
+  .about-photo-col {
+    text-align: center;
+  }
+
+  .skill-groups {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
