@@ -43,30 +43,42 @@ h1, h2, h3, .logo {
 }
 
 /* ── Nav ── */
+/* No tint and no divider — the bar reads as part of the page. The blur alone
+   keeps the links legible once content scrolls underneath. */
 header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--header-bg);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
+  background: transparent;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 nav {
   max-width: var(--width);
   margin: 0 auto;
   padding: 0 1.5rem;
-  height: 52px;
+  height: 78px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.25rem;
   letter-spacing: 0.05em;
   color: var(--accent);
+  text-decoration: none;
+}
+
+.logo-img {
+  width: 52px;
+  height: 52px;
+  display: block;
 }
 
 nav ul {
@@ -78,7 +90,7 @@ nav ul {
 nav a {
   color: var(--muted);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   transition: color 0.2s;
 }
 
