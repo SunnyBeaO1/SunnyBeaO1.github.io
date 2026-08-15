@@ -249,32 +249,6 @@ h2::after {
   margin-bottom: 0;
 }
 
-.skills h4 {
-  font-family: var(--font-body);
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 0.75rem;
-}
-
-.skill-list {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.skill-list li {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  padding: 0.3rem 0.8rem;
-  border-radius: 6px;
-  font-size: 0.88rem;
-  color: var(--muted);
-}
-
 /* ── Timeline (education, research experience, teaching) ── */
 .education h3 {
   font-size: 1rem;
@@ -316,14 +290,6 @@ h2::after {
   padding-left: 1rem;
   font-size: 0.88rem;
   color: var(--muted);
-}
-
-/* ── Skill groups ── */
-.skill-groups {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.75rem;
-  margin-bottom: 2rem;
 }
 
 /* ── Research ── */
@@ -597,19 +563,6 @@ h2::after {
   text-align: center;
 }
 
-#contact p {
-  color: var(--muted);
-  font-size: 1rem;
-  margin-bottom: 1.25rem;
-}
-
-#contact .contact-note {
-  max-width: 46ch;
-  margin: -0.6rem auto 1.5rem;
-  font-size: 0.88rem;
-  line-height: 1.6;
-}
-
 .contact-links {
   display: flex;
   gap: 1rem;
@@ -641,10 +594,5 @@ footer {
 
   .about-photo-col {
     text-align: center;
-  }
-
-  .skill-groups {
-    grid-template-columns: 1fr;
-    gap: 2rem;
   }
 }
