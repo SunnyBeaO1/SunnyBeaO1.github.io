@@ -292,6 +292,13 @@ h2::after {
   color: var(--muted);
 }
 
+.edu-pending {
+  display: block;
+  font-size: 0.8rem;
+  font-style: italic;
+  opacity: 0.75;
+}
+
 /* ── Research ── */
 #research {
   border-top: 1px solid var(--border);
@@ -372,12 +379,6 @@ h2::after {
 /* ── Publications ── */
 #publications {
   border-top: 1px solid var(--border);
-}
-
-.pub-note {
-  color: var(--muted);
-  font-size: 0.85rem;
-  margin-bottom: 1.25rem;
 }
 
 .pub-group {
@@ -461,11 +462,6 @@ h2::after {
   font-weight: 500;
   padding: 0.15rem 0.6rem;
   border-radius: 4px;
-}
-
-.status-prep {
-  background: var(--surface);
-  color: var(--muted);
 }
 
 .status-pub {
