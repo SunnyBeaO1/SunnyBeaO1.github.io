@@ -292,6 +292,15 @@ h2::after {
   color: var(--muted);
 }
 
+.edu-extra-label {
+  display: block;
+  font-weight: 500;
+}
+
+.edu-extra-detail {
+  display: block;
+}
+
 /* ── Research ── */
 #research {
   border-top: 1px solid var(--border);
