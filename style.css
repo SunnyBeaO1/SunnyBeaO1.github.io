@@ -292,13 +292,6 @@ h2::after {
   color: var(--muted);
 }
 
-.edu-pending {
-  display: block;
-  font-size: 0.8rem;
-  font-style: italic;
-  opacity: 0.75;
-}
-
 /* ── Research ── */
 #research {
   border-top: 1px solid var(--border);
