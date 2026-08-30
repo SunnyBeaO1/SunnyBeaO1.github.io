@@ -584,7 +584,7 @@ footer {
   --pg: var(--accent);
   --pg-soft: var(--accent-soft);
   --pg-text: var(--accent-hover);
-  margin: 1rem 0 0.3rem;
+  margin: 0.5rem 0 0.3rem;
   padding: 0.95rem 1.1rem 0.85rem;
   border: 1px solid var(--border);
   border-radius: 8px;
