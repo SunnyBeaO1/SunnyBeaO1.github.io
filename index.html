@@ -205,6 +205,39 @@
                 <span class="pub-status">Under review</span>
                 <a class="link" href="https://www.biorxiv.org/content/10.64898/2026.08.04.741714v1" target="_blank" rel="noopener">Preprint →</a>
               </div>
+              <figure class="paradigm cond-plain" id="paradigm">
+                <div class="pg-head">
+                  <span>Task design &middot; 2 blocks &times; 30 trials</span>
+                  <div class="pg-tabs" role="tablist" aria-label="Condition">
+                    <button type="button" class="pg-tab is-on" role="tab" aria-selected="true" data-cond="plain">Non-regulation</button>
+                    <button type="button" class="pg-tab" role="tab" aria-selected="false" data-cond="reg">Self-compassion</button>
+                  </div>
+                </div>
+
+                <ol class="pg-track">
+                  <li><button type="button" class="pg-dot is-on" data-step="0"><span class="pg-n">1</span><span class="pg-t">Fixation</span></button></li>
+                  <li><button type="button" class="pg-dot" data-step="1"><span class="pg-n">2</span><span class="pg-t">Image</span></button></li>
+                  <li><button type="button" class="pg-dot" data-step="2"><span class="pg-n">3</span><span class="pg-t">Rating</span></button></li>
+                </ol>
+
+                <div class="pg-screen" id="pgScreen" aria-live="polite"></div>
+                <p class="pg-desc" id="pgDesc"></p>
+                <div class="pg-eeg" id="pgEeg" hidden></div>
+
+                <div class="pg-nav">
+                  <button type="button" class="pg-btn" id="pgPrev" disabled>&lsaquo; Back</button>
+                  <button type="button" class="pg-btn" id="pgNext">Next &rsaquo;</button>
+                </div>
+
+                <figcaption>
+                  Click through one trial, or switch condition to see what changes.
+                  Block order was counterbalanced across participants. Before the task,
+                  each participant wrote three self-compassionate sentences of their own.
+                  Exclusion images came from the Image Database of Social Inclusion and
+                  Exclusion in Young Asian Adults; the frame above is a schematic, not a
+                  task image.
+                </figcaption>
+              </figure>
               <details class="abstract">
                 <summary>Abstract</summary>
                 <div class="abstract-body">
@@ -380,5 +413,109 @@
   <footer>
     <p>© 2026 Huijing Sun. Built with HTML &amp; CSS.</p>
   </footer>
+  <script>
+  (function () {
+    var fig = document.getElementById('paradigm');
+    if (!fig) return;
+
+    function person(x, tone) {
+      return '<circle cx="' + x + '" cy="26" r="9" fill="' + tone + '"/>' +
+             '<ellipse cx="' + x + '" cy="60" rx="12" ry="18" fill="' + tone + '"/>';
+    }
+
+    var SCENE =
+      '<svg class="pg-scene" viewBox="0 0 250 92" role="img" aria-label="Schematic of a ' +
+      'social exclusion image: four figures grouped together and one figure apart, circled.">' +
+      person(34, '#d7d0c8') + person(64, '#d7d0c8') +
+      person(94, '#d7d0c8') + person(124, '#d7d0c8') +
+      person(206, '#bdb4aa') +
+      '<ellipse cx="206" cy="46" rx="27" ry="41" fill="none" stroke="var(--accent)" ' +
+      'stroke-width="2" stroke-dasharray="5 4"/></svg>';
+
+    // Fixation is identical in both blocks; only the instruction and the ratings differ.
+    var FIX = {
+      label: 'Fixation', time: '1–3 s (jittered)', body: '<span class="pg-fix">+</span>',
+      desc: 'A fixation cross appears at the centre of the screen for a random interval.'
+    };
+
+    function scale(name, lo, hi) {
+      var ticks = '';
+      for (var i = 0; i < 9; i++) ticks += '<i></i>';
+      return '<div class="pg-scale"><span class="pg-scale-label">' + name +
+             '</span><span class="pg-scale-bar">' + ticks +
+             '</span><span class="pg-scale-ends"><span>' + lo + '</span><span>' +
+             hi + '</span></span></div>';
+    }
+
+    var EMO = ['Negative emotion', '1 = not at all', '9 = extremely sad'];
+    var SC  = ['Self-compassion', '1 = none', '9 = extremely engaged'];
+
+    var LPP = 'EEG time-locked to image onset &middot; LPP = mean amplitude 600–1100 ms ' +
+              'at PO3, POz, PO4';
+
+    var STEPS = {
+      plain: [
+        FIX,
+        { label: 'Block A · Image', time: '8 s', body: SCENE, eeg: LPP,
+          desc: 'Imagine yourself as the adolescent circled in red — without using the self-compassion statements you wrote.' },
+        { label: 'Block A · Rating', time: 'self-paced',
+          body: scale(EMO[0], EMO[1], EMO[2]),
+          desc: 'Rate your negative emotion on a 9-point scale.' }
+      ],
+      reg: [
+        FIX,
+        { label: 'Block B · Image', time: '8 s',
+          body: SCENE + '<span class="pg-chip">+ apply your self-compassion statements</span>',
+          eeg: LPP,
+          desc: 'Imagine yourself as the adolescent circled in red, and actively apply your own self-compassion statements to comfort yourself.' },
+        { label: 'Block B · Rating', time: 'self-paced',
+          body: scale(SC[0], SC[1], SC[2]) + scale(EMO[0], EMO[1], EMO[2]),
+          desc: 'Rate how much self-compassion you engaged in, then rate your negative emotion — both on 9-point scales.' }
+      ]
+    };
+
+    var cond = 'plain', step = 0;
+    var screen = document.getElementById('pgScreen');
+    var desc = document.getElementById('pgDesc');
+    var eeg = document.getElementById('pgEeg');
+    var prev = document.getElementById('pgPrev');
+    var next = document.getElementById('pgNext');
+    var dots = [].slice.call(fig.querySelectorAll('.pg-dot'));
+    var tabs = [].slice.call(fig.querySelectorAll('.pg-tab'));
+
+    function render() {
+      var d = STEPS[cond][step];
+      fig.classList.toggle('cond-reg', cond === 'reg');
+      fig.classList.toggle('cond-plain', cond !== 'reg');
+      screen.innerHTML =
+        '<span class="pg-screen-head"><span class="pg-screen-label">' + d.label +
+        '</span><span class="pg-time">' + d.time + '</span></span>' + d.body;
+      desc.textContent = d.desc;
+      eeg.hidden = !d.eeg;
+      if (d.eeg) eeg.innerHTML = d.eeg;
+      prev.disabled = step === 0;
+      next.disabled = step === STEPS[cond].length - 1;
+      dots.forEach(function (b, i) { b.classList.toggle('is-on', i === step); });
+      tabs.forEach(function (b) {
+        var on = b.getAttribute('data-cond') === cond;
+        b.classList.toggle('is-on', on);
+        b.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+    }
+
+    tabs.forEach(function (b) {
+      b.addEventListener('click', function () { cond = b.getAttribute('data-cond'); render(); });
+    });
+    dots.forEach(function (b, i) {
+      b.addEventListener('click', function () { step = i; render(); });
+    });
+    prev.addEventListener('click', function () { if (step > 0) { step--; render(); } });
+    next.addEventListener('click', function () {
+      if (step < STEPS[cond].length - 1) { step++; render(); }
+    });
+
+    render();
+  })();
+  </script>
 </body>
 </html>
