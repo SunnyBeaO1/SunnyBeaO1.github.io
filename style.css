@@ -243,6 +243,10 @@ h2::after {
   color: var(--muted);
   font-size: 1rem;
   margin-bottom: 0.6rem;
+  /* Hyphenation keeps justified English from opening rivers of white space. */
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 .about-text p:last-child {
