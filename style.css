@@ -382,6 +382,11 @@ h2::after {
   color: var(--accent-hover);
 }
 
+/* Inline links inside timeline entries match the surrounding text size. */
+.tl-detail .link {
+  font-size: inherit;
+}
+
 /* ── Publications ── */
 #publications {
   border-top: 1px solid var(--border);
