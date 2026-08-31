@@ -9,6 +9,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..800&family=Karla:wght@400..700&display=swap" rel="stylesheet" />
+  <meta name="description" content="Huijing Sun is a master's student in Mental Health Education at Shandong Normal University, studying adolescent mental health with EEG and longitudinal cohort data." />
+  <link rel="canonical" href="https://sunnybeao1.github.io/" />
+
+  <!-- Link preview card, used by messaging apps, mail clients and social sites. -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="Huijing Sun" />
+  <meta property="og:title" content="Huijing Sun — Personal Academic Website" />
+  <meta property="og:description" content="Huijing Sun is a master's student in Mental Health Education at Shandong Normal University, studying adolescent mental health with EEG and longitudinal cohort data." />
+  <meta property="og:url" content="https://sunnybeao1.github.io/" />
+  <meta property="og:image" content="https://sunnybeao1.github.io/og-card.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Huijing Sun — M.Ed. student in Mental Health Education, Shandong Normal University" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -20,8 +35,8 @@
       </a>
       <ul>
         <li><a href="#about">About</a></li>
-        <li><a href="#research">Research</a></li>
         <li><a href="#publications">Publications</a></li>
+        <li><a href="#research">Research</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -106,78 +121,6 @@
             </div>
           </div><!-- .about-right -->
         </div>
-      </div>
-    </section>
-
-    <section id="research">
-      <div class="container">
-        <h2>Research</h2>
-
-        <div class="interests">
-          <div class="interest-item">
-            <h3>Dynamics of adolescent mental health</h3>
-            <p>
-              How psychological difficulties interact and evolve over time, modeled
-              with multi-wave cohort data and temporal network analysis.
-            </p>
-          </div>
-          <div class="interest-item">
-            <h3>Electrophysiological markers</h3>
-            <p>
-              Resting-state and task-based EEG signatures that distinguish at-risk
-              adolescents and track change across development.
-            </p>
-          </div>
-          <div class="interest-item">
-            <h3>Intervention and response prediction</h3>
-            <p>
-              Whether TMS shifts symptom structure, and which baseline features
-              predict who benefits from it.
-            </p>
-          </div>
-        </div>
-
-        <h3 class="subhead">Research &amp; Internship Experience</h3>
-        <ul class="timeline">
-          <li class="tl-item">
-            <span class="tl-period">2024.07 – Present</span>
-            <span class="tl-title">
-              Shandong Adolescent Neuroimaging Database (SAND)
-            </span>
-            <span class="tl-detail">
-              Data collection across modalities — structural MRI, fMRI, cognitive
-              assessments, and questionnaires.
-            </span>
-          </li>
-          <li class="tl-item">
-            <span class="tl-period">2025.02 – 2026.06</span>
-            <span class="tl-title">
-              iTBS Treatment for Adolescent Depression
-            </span>
-            <span class="tl-detail">
-              Data collection, processing, and analysis.
-            </span>
-          </li>
-          <li class="tl-item">
-            <span class="tl-period">2025.12 – 2026.03</span>
-            <span class="tl-title">
-              fNIRS Study of Parent–Adolescent Communication
-            </span>
-            <span class="tl-detail">
-              Data collection.
-            </span>
-          </li>
-          <li class="tl-item tl-teaching">
-            <span class="tl-period">2025.09 – 2025.12 <span class="tl-tag">Intern</span></span>
-            <span class="tl-title">
-              Psychology Teacher (Intern) · Jinan Foreign Language School
-            </span>
-            <span class="tl-detail">
-              Taught mental health lessons, facilitated group counseling
-              activities, and conducted individual student interviews.
-            </span>
-          </li>
-        </ul>
       </div>
     </section>
 
@@ -361,6 +304,55 @@
                 <span class="pub-note-inline">Co-first author</span>
               </div>
               <details class="abstract">
+                <summary>Trial design</summary>
+                <figure class="trial" id="trial">
+                  <div class="tr-node">
+                    <b>80</b>
+                    <span>adolescents with major depressive disorder</span>
+                    <em>Shandong Mental Health Center</em>
+                  </div>
+
+                  <div class="tr-split">1 : 1 randomisation &middot; double-blind</div>
+
+                  <div class="tr-arms">
+                    <div class="tr-arm">
+                      <b>10 Hz rTMS</b>
+                      <span>adjunct to antidepressant medication</span>
+                    </div>
+                    <div class="tr-arm">
+                      <b>iTBS</b>
+                      <span>adjunct to antidepressant medication</span>
+                    </div>
+                  </div>
+
+                  <ol class="tr-time" role="tablist" aria-label="Assessment timepoint">
+                    <li><button type="button" class="tr-t is-on" role="tab" aria-selected="true" data-t="0"><b>T0</b><span>Baseline</span></button></li>
+                    <li><button type="button" class="tr-t" role="tab" aria-selected="false" data-t="1"><b>T1</b><span>Post-treatment</span></button></li>
+                    <li><button type="button" class="tr-t" role="tab" aria-selected="false" data-t="2"><b>T2</b><span>1-month follow-up</span></button></li>
+                  </ol>
+
+                  <div class="tr-panel" id="trPanel" aria-live="polite"></div>
+
+                  <figcaption>
+                    Click a timepoint to see what is measured. The primary outcome is the
+                    change in depressive symptom severity from baseline to post-treatment;
+                    secondary outcomes cover anxiety, neurocognition, neuroimaging and
+                    neurophysiological measures, and treatment safety and tolerability.
+                    A planned design — the trial has not yet reported results.
+                  </figcaption>
+                </figure>
+              </details>
+              <details class="abstract">
+                <summary>Key numbers</summary>
+  <ul class="metrics planned">
+                    <li><b>80</b><span>adolescents to be randomised</span></li>
+                    <li><b>2</b><span>stimulation protocols</span></li>
+                    <li><b>3</b><span>assessment timepoints</span></li>
+                    <li><b>6</b><span>neuroimaging modalities</span></li>
+                </ul>
+                <p class="metrics-note">Planned design — the trial is registered as a protocol, so these are targets, not results.</p>
+              </details>
+              <details class="abstract">
                 <summary>Abstract</summary>
                 <div class="abstract-body">
                   <p>
@@ -451,11 +443,92 @@
       </div>
     </section>
 
+    <section id="research">
+      <div class="container">
+        <h2>Research</h2>
+
+        <ol class="interests">
+          <li class="interest-item">
+            <span class="interest-n">01</span>
+            <h3>Describing the problem</h3>
+            <p>
+              Which difficulties arise together in adolescence, and which ones pull
+              the others along — mapped with multi-wave cohort data and temporal
+              network analysis.
+            </p>
+          </li>
+          <li class="interest-item">
+            <span class="interest-n">02</span>
+            <h3>Finding its signature</h3>
+            <p>
+              What that process looks like in the brain: resting-state and
+              task-based EEG markers that separate at-risk adolescents and track
+              change as they develop.
+            </p>
+          </li>
+          <li class="interest-item">
+            <span class="interest-n">03</span>
+            <h3>Changing its course</h3>
+            <p>
+              Whether stimulation shifts that structure at all, and which baseline
+              features tell us in advance who will benefit.
+            </p>
+          </li>
+        </ol>
+
+        <h3 class="subhead">Research &amp; Internship Experience</h3>
+        <ul class="timeline">
+          <li class="tl-item">
+            <span class="tl-period">2024.07 – Present</span>
+            <span class="tl-title">
+              Shandong Adolescent Neuroimaging Database (SAND)
+            </span>
+            <span class="tl-detail">
+              Data collection across modalities — structural MRI, fMRI, cognitive
+              assessments, and questionnaires.
+            </span>
+          </li>
+          <li class="tl-item">
+            <span class="tl-period">2025.02 – 2026.06</span>
+            <span class="tl-title">
+              iTBS Treatment for Adolescent Depression
+            </span>
+            <span class="tl-detail">
+              Data collection, processing, and analysis.
+            </span>
+          </li>
+          <li class="tl-item">
+            <span class="tl-period">2025.12 – 2026.03</span>
+            <span class="tl-title">
+              fNIRS Study of Parent–Adolescent Communication
+            </span>
+            <span class="tl-detail">
+              Data collection.
+            </span>
+          </li>
+          <li class="tl-item tl-teaching">
+            <span class="tl-period">2025.09 – 2025.12 <span class="tl-tag">Intern</span></span>
+            <span class="tl-title">
+              Psychology Teacher (Intern) · Jinan Foreign Language School
+            </span>
+            <span class="tl-detail">
+              Taught mental health lessons, facilitated group counseling
+              activities, and conducted individual student interviews.
+            </span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
     <section id="contact">
       <div class="container">
         <h2>Get in Touch</h2>
         <div class="contact-links">
-          <a href="mailto:huijings2001@gmail.com" class="btn">Email Me</a>
+          <a href="Huijing_Sun_CV.pdf" class="btn btn-outline" target="_blank" rel="noopener">Download CV</a>
+          <a href="#contact" class="btn" data-email="aHVpamluZ3MyMDAxQGdtYWlsLmNvbQ==">Email Me</a>
+          <noscript>
+            <span class="mail-fallback">huijings2001 [at] gmail [dot] com</span>
+          </noscript>
           <a href="https://github.com/SunnyBeaO1" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
           <a href="https://www.linkedin.com/in/huijing-sun-a97a83330/en/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
         </div>
@@ -568,6 +641,76 @@
     });
 
     render();
+  })();
+
+  /* Trial-design figure: the battery is full at T0 and T1, clinical-only at T2. */
+  (function () {
+    var fig = document.getElementById('trial');
+    if (!fig) return;
+
+    var FULL = ['Clinical assessments', 'Neurocognitive testing', 'Structural MRI',
+                'Resting-state fMRI', 'Task-based fMRI', 'Arterial spin labeling',
+                'Resting-state EEG', 'TMS-EEG'];
+
+    var T = [
+      { note: 'Full multimodal battery before the first stimulation session.', items: FULL },
+      { note: 'The same battery is repeated, so every measure has a matched pair.', items: FULL },
+      { note: 'Clinical assessments only — no imaging at follow-up.', items: ['Clinical assessments'] }
+    ];
+
+    var panel = document.getElementById('trPanel');
+    var tabs = [].slice.call(fig.querySelectorAll('.tr-t'));
+
+    function render(i) {
+      var d = T[i];
+      panel.innerHTML = '<ul class="tr-list">' + d.items.map(function (x) {
+        return '<li>' + x + '</li>';
+      }).join('') + '</ul><p class="tr-note">' + d.note + '</p>';
+      tabs.forEach(function (b, j) {
+        b.classList.toggle('is-on', i === j);
+        b.setAttribute('aria-selected', i === j ? 'true' : 'false');
+      });
+    }
+
+    tabs.forEach(function (b, j) {
+      b.addEventListener('click', function () { render(j); });
+    });
+    render(0);
+  })();
+
+  /* The address is base64 in the markup, so it is not sitting in the page
+     source for scrapers. Restoring it as a real href on load keeps the link
+     behaving like any other — right-click and copy still work. */
+  (function () {
+    for (var i = 0, a = document.querySelectorAll('[data-email]'); i < a.length; i++) {
+      try {
+        var addr = window.atob(a[i].getAttribute('data-email'));
+        if (addr.indexOf('@') > 0) a[i].setAttribute('href', 'mailto:' + addr);
+      } catch (e) { /* leave the fallback link alone */ }
+    }
+  })();
+
+  /* Highlight whichever section is crossing the middle of the viewport. */
+  (function () {
+    var links = {}, secs = [];
+    [].forEach.call(document.querySelectorAll('nav ul a[href^="#"]'), function (a) {
+      var el = document.getElementById(a.getAttribute('href').slice(1));
+      if (el) { links[el.id] = a; secs.push(el); }
+    });
+    if (!secs.length || !('IntersectionObserver' in window)) return;
+
+    var state = {};
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { state[e.target.id] = e.isIntersecting; });
+      var cur = null;
+      secs.forEach(function (el) { if (state[el.id]) cur = el.id; });
+      if (!cur) return;
+      Object.keys(links).forEach(function (id) {
+        links[id].classList.toggle('is-current', id === cur);
+      });
+    }, { rootMargin: '-45% 0px -45% 0px' });
+
+    secs.forEach(function (el) { io.observe(el); });
   })();
   </script>
 </body>
