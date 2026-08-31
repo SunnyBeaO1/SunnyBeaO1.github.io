@@ -560,8 +560,11 @@ h2::after {
   font-weight: 600;
 }
 
+/* Sits directly under the author list, so it hugs it more tightly than a
+   contribution note lower in the entry would. */
 .pub-contrib {
-  margin-top: 0.45rem;
+  display: block;
+  margin-top: 0.2rem;
   font-size: 0.8rem;
   font-style: italic;
   color: var(--muted);
