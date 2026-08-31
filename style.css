@@ -590,27 +590,34 @@ footer {
 }
 
 /* ── Responsive ── */
-/* Foot-of-panel collapse button, added by script only to tall panels. */
+/* Foot-of-panel collapse button, added by script only to tall panels.
+   Sticky, so it rides along the bottom of the viewport the whole time the
+   panel is open — no scrolling to the very end to close it. It settles into
+   place naturally once you reach the foot of the panel. */
 .fold-up {
   display: block;
+  position: sticky;
+  bottom: 0.75rem;
+  z-index: 5;
   width: 100%;
   margin-top: 1rem;
-  padding: 0.45rem;
-  border: 1px solid var(--border);
+  padding: 0.5rem;
+  border: 1px solid var(--accent);
   border-radius: 6px;
-  background: transparent;
+  /* Opaque: content scrolls behind it. */
+  background: var(--bg);
+  box-shadow: 0 4px 14px rgba(50, 47, 45, 0.10);
   font-family: inherit;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  color: var(--muted);
+  color: var(--accent-hover);
   cursor: pointer;
-  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  transition: background 0.2s, color 0.2s;
 }
 
 .fold-up:hover {
-  border-color: var(--accent);
-  color: var(--accent-hover);
-  background: var(--accent-soft);
+  background: var(--accent);
+  color: #fff;
 }
 
 /* display:block above would otherwise beat the hidden attribute. */
