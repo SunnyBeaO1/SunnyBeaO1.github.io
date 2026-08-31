@@ -690,6 +690,39 @@
     }
   })();
 
+  /* A tall <details> is awkward to close: the summary has scrolled far above by
+     the time you reach the end. Give those a collapse button at the foot, and
+     land the summary just under the sticky nav afterwards so the page does not
+     jump somewhere unrelated. Short panels never show one. */
+  (function () {
+    var MIN_TALL = 520;
+    var NAV = 96;
+
+    [].forEach.call(document.querySelectorAll('details.abstract'), function (d) {
+      var sum = d.querySelector('summary');
+      if (!sum) return;
+
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'fold-up';
+      btn.hidden = true;
+      btn.innerHTML = '\u2191 Collapse';
+
+      btn.addEventListener('click', function () {
+        d.open = false;
+        var y = window.scrollY + sum.getBoundingClientRect().top - NAV;
+        window.scrollTo({ top: y < 0 ? 0 : y, behavior: 'smooth' });
+        sum.focus({ preventScroll: true });
+      });
+
+      d.addEventListener('toggle', function () {
+        if (d.open) btn.hidden = d.offsetHeight < MIN_TALL;
+      });
+
+      d.appendChild(btn);
+    });
+  })();
+
   /* Highlight whichever section is crossing the middle of the viewport. */
   (function () {
     var links = {}, secs = [];

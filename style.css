@@ -590,6 +590,32 @@ footer {
 }
 
 /* ── Responsive ── */
+/* Foot-of-panel collapse button, added by script only to tall panels. */
+.fold-up {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.45rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: transparent;
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.fold-up:hover {
+  border-color: var(--accent);
+  color: var(--accent-hover);
+  background: var(--accent-soft);
+}
+
+/* display:block above would otherwise beat the hidden attribute. */
+.fold-up[hidden] { display: none; }
+
 /* ── Trial design figure ── */
 .trial {
   margin: 1rem 0 0.3rem;
