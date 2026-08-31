@@ -587,10 +587,58 @@ footer {
 }
 
 /* ── Responsive ── */
+/* ── Published figures inside a publication entry ── */
+.figset {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 0.4rem;
+}
+
+.pubfig {
+  margin: 0;
+}
+
+/* Capped by height, not width, so the tall portrait figures don't tower
+   over the landscape one. Click any figure to open it full size. */
+.pubfig img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 440px;
+  margin: 0 auto;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  cursor: zoom-in;
+  transition: border-color 0.2s;
+}
+
+.pubfig a:hover img {
+  border-color: var(--accent);
+}
+
+.pubfig figcaption {
+  margin-top: 0.55rem;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--muted);
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+.pubfig figcaption b {
+  color: var(--text);
+  font-weight: 600;
+}
+
 /* ── Paradigm figure (interactive) ── */
 /* --pg* retint the whole widget when the self-compassion block is selected. */
 .paradigm {
   --pg: var(--accent);
+  --pg-rgb: 169, 116, 130;
   --pg-soft: var(--accent-soft);
   --pg-text: var(--accent-hover);
   margin: 0.5rem 0 0.3rem;
@@ -602,6 +650,7 @@ footer {
 
 .paradigm.cond-reg {
   --pg: var(--accent2);
+  --pg-rgb: 127, 156, 138;
   --pg-soft: var(--accent2-soft);
   --pg-text: var(--accent2-text);
 }
@@ -776,9 +825,21 @@ footer {
   flex: 1;
   height: 13px;
   border-radius: 3px;
-  background: var(--pg-soft);
   border: 1px solid var(--border);
 }
+
+/* The 9 points shade from light to dark, so the scale reads as a scale
+   rather than nine identical boxes. Ramp stops well short of full
+   saturation — it should suggest direction, not shout. */
+.pg-scale-bar i:nth-child(1) { background: rgba(var(--pg-rgb), 0.07); }
+.pg-scale-bar i:nth-child(2) { background: rgba(var(--pg-rgb), 0.14); }
+.pg-scale-bar i:nth-child(3) { background: rgba(var(--pg-rgb), 0.21); }
+.pg-scale-bar i:nth-child(4) { background: rgba(var(--pg-rgb), 0.28); }
+.pg-scale-bar i:nth-child(5) { background: rgba(var(--pg-rgb), 0.35); }
+.pg-scale-bar i:nth-child(6) { background: rgba(var(--pg-rgb), 0.42); }
+.pg-scale-bar i:nth-child(7) { background: rgba(var(--pg-rgb), 0.49); }
+.pg-scale-bar i:nth-child(8) { background: rgba(var(--pg-rgb), 0.56); }
+.pg-scale-bar i:nth-child(9) { background: rgba(var(--pg-rgb), 0.63); }
 
 .pg-scale-ends {
   display: flex;

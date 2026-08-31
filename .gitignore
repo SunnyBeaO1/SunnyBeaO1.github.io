@@ -14,3 +14,6 @@ Microsoft.VisualStudio.Services.VSIXPackage
 icon.png
 
 .DS_Store
+
+# Manuscript figures and submission drafts — source material, never deployed
+文章图/
