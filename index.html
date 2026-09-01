@@ -8,7 +8,7 @@
   <link rel="apple-touch-icon" href="favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..800&family=Karla:wght@400..700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..800&amp;family=Karla:wght@400..700&amp;display=swap" rel="stylesheet" />
   <meta name="description" content="Huijing Sun is a master's student in Mental Health Education at Shandong Normal University, studying adolescent mental health with EEG and longitudinal cohort data." />
   <link rel="canonical" href="https://sunnybeao1.github.io/" />
 
@@ -24,12 +24,32 @@
   <meta property="og:image:alt" content="Huijing Sun — M.Ed. student in Mental Health Education, Shandong Normal University" />
   <meta name="twitter:card" content="summary_large_image" />
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Huijing Sun",
+    "url": "https://sunnybeao1.github.io/",
+    "image": "https://sunnybeao1.github.io/photo.jpg",
+    "jobTitle": "M.Ed. Student in Mental Health Education",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "Shandong Normal University"
+    },
+    "sameAs": [
+      "https://github.com/SunnyBeaO1",
+      "https://www.linkedin.com/in/huijing-sun-a97a83330/en/"
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header>
-    <nav>
-      <a href="#hero" class="logo">
+    <nav aria-label="Primary navigation">
+      <a href="#hero" class="logo" aria-label="Huijing Sun — back to top">
         <img src="logo.png" alt="" class="logo-img" />
         <span>HJ</span>
       </a>
@@ -42,7 +62,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main-content">
     <section id="hero">
       <div class="hero-content">
         <h1>Hi, I'm <span class="accent">Huijing Sun</span></h1>
@@ -57,6 +77,7 @@
         </ul>
         <div class="hero-links">
           <a href="#research" class="btn">View Research</a>
+          <a href="Huijing_Sun_CV.pdf" class="btn btn-outline" target="_blank" rel="noopener">View CV</a>
           <a href="#contact" class="btn btn-outline">Get in Touch</a>
         </div>
       </div>
@@ -115,7 +136,7 @@
               <p class="edu-extra">
                 <span class="edu-extra-label">TOEFL iBT · 2026.08.19</span>
                 <span class="edu-extra-detail">
-                  Overall 5.5/6 · Reading 6 · Listening 5 · Speaking 5 · Writing 5
+                  Overall 5.5/6 (Equivalent to 110/120) · Reading 6 · Listening 5 · Speaking 5 · Writing 5
                 </span>
               </p>
             </div>
@@ -133,8 +154,8 @@
           <ol class="pub-list">
             <li class="pub-item">
               <span class="pub-authors">
-                <span class="me">Sun, H.</span>, Zou, W., Wang, D., et al.,
-                Hommel, B., Yang, Y., &amp; Wang, K.
+                <span class="me">Huijing Sun</span>, Bernard Hommel,
+                Kangcheng Wang, et al.
               </span>
               <span class="pub-title">
                 Neural mechanisms of impaired self-compassion in depressed
@@ -520,6 +541,10 @@
     <section id="contact">
       <div class="container">
         <h2>Get in Touch</h2>
+        <p class="contact-intro">
+          I welcome conversations about adolescent mental health, EEG, longitudinal
+          research, and potential collaborations.
+        </p>
         <div class="contact-links">
           <a href="Huijing_Sun_CV.pdf" class="btn btn-outline" target="_blank" rel="noopener">Download CV</a>
           <a href="#contact" class="btn" data-email="aHVpamluZ3MyMDAxQGdtYWlsLmNvbQ==">Email Me</a>
@@ -737,6 +762,8 @@
       if (!cur) return;
       Object.keys(links).forEach(function (id) {
         links[id].classList.toggle('is-current', id === cur);
+        if (id === cur) links[id].setAttribute('aria-current', 'location');
+        else links[id].removeAttribute('aria-current');
       });
     }, { rootMargin: '-45% 0px -45% 0px' });
 
