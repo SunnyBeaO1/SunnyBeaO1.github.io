@@ -360,9 +360,45 @@ h2::after {
   margin-bottom: 0.5rem;
 }
 
+.interest-item {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.42);
+  transition: transform 0.2s ease, border-color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.interest-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent2);
+  box-shadow: 0 6px 18px rgba(50, 47, 45, 0.06);
+}
+
 .interest-item p {
   color: var(--muted);
   font-size: 0.95rem;
+}
+
+.interest-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: auto;
+  padding-top: 0.9rem;
+}
+
+.interest-tags li {
+  padding: 0.18rem 0.48rem;
+  border-radius: 4px;
+  background: var(--accent2-soft);
+  color: var(--accent2-text);
+  font-size: 0.68rem;
+  font-weight: 600;
+  line-height: 1.35;
 }
 
 .subhead {
@@ -532,7 +568,7 @@ h2::after {
   margin-top: 0.5rem;
 }
 
-.abstract summary {
+.abstract > summary {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
@@ -546,21 +582,21 @@ h2::after {
   transition: color 0.15s ease;
 }
 
-.abstract summary::-webkit-details-marker {
+.abstract > summary::-webkit-details-marker {
   display: none;
 }
 
-.abstract summary::before {
+.abstract > summary::before {
   content: "▸";
   font-size: 0.7rem;
   transition: transform 0.15s ease;
 }
 
-.abstract[open] summary::before {
+.abstract[open] > summary::before {
   transform: rotate(90deg);
 }
 
-.abstract summary:hover {
+.abstract > summary:hover {
   color: var(--accent);
 }
 
@@ -582,6 +618,183 @@ h2::after {
 .abstract-body strong {
   color: var(--text);
   font-weight: 600;
+}
+
+/* ── Interactive publication story ── */
+.study-story[open] {
+  margin-top: 0.75rem;
+}
+
+.story-intro {
+  margin: 0.8rem 0 1.1rem;
+  padding: 1rem 1.1rem;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent-soft), var(--accent2-soft));
+}
+
+.story-kicker {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--accent-hover);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.story-intro p {
+  max-width: 36rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+
+.story-step {
+  position: relative;
+  padding: 0.25rem 0 1.5rem 2.25rem;
+  border-left: 1px solid var(--border);
+}
+
+.story-step:last-of-type {
+  padding-bottom: 0.25rem;
+  border-left-color: transparent;
+}
+
+.story-heading {
+  display: flex;
+  gap: 0.75rem;
+  margin-left: -2.8rem;
+  margin-bottom: 0.8rem;
+  align-items: flex-start;
+}
+
+.story-heading > span {
+  flex: none;
+  width: 2.05rem;
+  height: 2.05rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--accent2);
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--accent2-text);
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.story-heading h4 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+
+.story-heading p {
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.story-more {
+  margin-top: 0.8rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--surface);
+}
+
+.story-more > summary {
+  cursor: pointer;
+  color: var(--accent-hover);
+  font-size: 0.8rem;
+  font-weight: 700;
+  list-style: none;
+}
+
+.story-more > summary::-webkit-details-marker { display: none; }
+.story-more > summary::after { content: " +"; }
+.story-more[open] > summary::after { content: " −"; }
+
+.story-more > p {
+  margin-top: 0.7rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.story-figure {
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.42);
+  overflow: hidden;
+}
+
+.story-figure > summary {
+  padding: 0.65rem 0.85rem;
+  cursor: pointer;
+  list-style: none;
+  color: var(--accent-hover);
+  font-size: 0.78rem;
+  font-weight: 700;
+  transition: background 0.18s ease;
+}
+
+.story-figure > summary:hover {
+  background: var(--accent-soft);
+}
+
+.story-figure > summary::-webkit-details-marker { display: none; }
+.story-figure > summary::before { content: "+ "; }
+.story-figure[open] > summary::before { content: "− "; }
+
+.story-figure[open] > summary {
+  border-bottom: 1px solid var(--border);
+}
+
+.story-figure .pubfig {
+  padding: 0.85rem;
+}
+
+.story-facts {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: 0.75rem;
+}
+
+.story-facts li {
+  min-width: 0;
+  padding-left: 0.65rem;
+  border-left: 2px solid var(--accent2);
+}
+
+.story-facts b,
+.story-facts span {
+  display: block;
+}
+
+.story-facts b {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  color: var(--text);
+}
+
+.story-facts span {
+  margin-top: 0.1rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.story-step .pubfig img {
+  max-height: 390px;
+}
+
+@media (max-width: 560px) {
+  .story-step { padding-left: 1.5rem; }
+  .story-heading { margin-left: -2.05rem; }
+  .story-facts { grid-template-columns: 1fr; }
 }
 
 /* Sits directly under the author list, so it hugs it more tightly than a
@@ -821,58 +1034,9 @@ nav a.is-current {
   font-weight: 600;
 }
 
-/* ── Headline metrics for a publication ── */
-/* Four numbers that carry the scale of a study without opening anything. */
-.metrics {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.8rem;
-  margin: 0.9rem 0 0.35rem;
-  padding-top: 0.85rem;
-  border-top: 1px solid var(--border);
-}
-
-.metrics li {
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
-  min-width: 0;
-}
-
-.metrics b {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  color: var(--accent);
-}
-
-.metrics span {
-  font-size: 0.72rem;
-  line-height: 1.35;
-  color: var(--muted);
-}
-
-/* A protocol reports targets, not findings — the green accent marks that. */
-.metrics.planned b {
-  color: var(--accent2-text);
-}
-
-.metrics-note {
-  margin: 0.15rem 0 0.35rem;
-  font-size: 0.72rem;
-  color: var(--muted);
-}
-
 .mail-fallback {
   font-size: 0.9rem;
   color: var(--muted);
-}
-
-@media (max-width: 560px) {
-  .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 /* ── Published figures inside a publication entry ── */
