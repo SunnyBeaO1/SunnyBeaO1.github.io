@@ -316,17 +316,47 @@ h2::after {
 .edu-extra {
   margin-top: 0.75rem;
   padding-left: 1rem;
-  font-size: 0.88rem;
   color: var(--muted);
+  font-size: 0.78rem;
 }
 
 .edu-extra-label {
   display: block;
+  color: var(--text);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.edu-extra-label time::before {
+  content: "·";
+  margin: 0 0.3rem;
+  color: var(--muted);
+}
+
+.edu-overall {
+  display: block;
+  margin-top: 0.12rem;
+  color: var(--text);
   font-weight: 500;
 }
 
-.edu-extra-detail {
+.edu-overall small {
+  margin-left: 0.25rem;
+  color: var(--muted);
+  font-size: inherit;
+  font-weight: 400;
+}
+
+.edu-scores {
   display: block;
+  margin-top: 0.12rem;
+  white-space: normal;
+}
+
+.edu-scores i {
+  margin: 0 0.2rem;
+  color: var(--border);
+  font-style: normal;
 }
 
 /* ── Research ── */
