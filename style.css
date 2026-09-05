@@ -548,6 +548,22 @@ h2::after {
   font-size: 1rem;
 }
 
+.pub-anchor {
+  margin-left: 0.18rem;
+  color: var(--accent);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  opacity: 0.65;
+  transition: opacity 0.2s, color 0.2s;
+}
+
+.pub-anchor:hover {
+  color: var(--accent-hover);
+  opacity: 1;
+}
+
 .pub-venue {
   font-size: 0.85rem;
   color: var(--muted);
@@ -660,6 +676,10 @@ h2::after {
 /* ── Interactive publication story ── */
 .study-story[open] {
   margin-top: 0.75rem;
+}
+
+#visualization {
+  scroll-margin-top: 6rem;
 }
 
 .story-intro {

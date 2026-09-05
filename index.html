@@ -166,13 +166,14 @@
               <span class="pub-title">
                 Neural mechanisms of impaired self-compassion in depressed
                 adolescents during social exclusion.
+                <a class="pub-anchor" href="#visualization" aria-label="Go to the interactive visualization" title="Go to visualization">#</a>
               </span>
               <span class="pub-venue"><em>BMC Psychiatry</em>. Accepted for publication.</span>
               <div class="pub-links">
                 <span class="pub-status status-pub">Accepted</span>
                 <a class="link" href="https://www.biorxiv.org/content/10.64898/2026.08.04.741714v1" target="_blank" rel="noopener">Preprint →</a>
               </div>
-              <details class="abstract study-story">
+              <details class="abstract study-story" id="visualization">
                 <summary>Visualization</summary>
                 <div class="story-intro">
                   <span class="story-kicker">The study in four steps</span>
@@ -780,6 +781,31 @@
 
       d.appendChild(btn);
     });
+  })();
+
+  /* Open and focus the first paper's visualization when its shareable anchor
+     is used, either from the title or from a copied URL. */
+  (function () {
+    var visualization = document.getElementById('visualization');
+    if (!visualization) return;
+
+    function revealVisualization() {
+      if (window.location.hash !== '#visualization') return;
+      visualization.open = true;
+      window.requestAnimationFrame(function () {
+        visualization.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+
+    var anchor = document.querySelector('.pub-anchor[href="#visualization"]');
+    if (anchor) {
+      anchor.addEventListener('click', function () {
+        visualization.open = true;
+      });
+    }
+
+    window.addEventListener('hashchange', revealVisualization);
+    revealVisualization();
   })();
 
   /* Highlight whichever section is crossing the middle of the viewport. */
