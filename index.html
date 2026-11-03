@@ -44,6 +44,7 @@
   </script>
 
   <link rel="stylesheet" href="style.css?v=20260901-3" />
+  <link rel="stylesheet" href="assets/hungry-bear/embed.css?v=1" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -592,6 +593,15 @@
   </main>
 
   <footer>
+    <details class="bear-egg" id="bear-easter-egg">
+      <summary>
+        <img src="assets/hungry-bear/bear-face.png" alt="" width="36" height="36" loading="lazy" />
+        <span class="bear-egg-open">A little forest break?</span>
+        <span class="bear-egg-close">Back to the forest · close game</span>
+      </summary>
+      <iframe class="bear-egg-frame" title="Hungry Bear — a little forest break" data-src="assets/hungry-bear/index.html" loading="lazy"></iframe>
+      <noscript><a href="assets/hungry-bear/index.html">Play Hungry Bear</a></noscript>
+    </details>
     <p>© 2026 Huijing Sun. Built with HTML &amp; CSS.</p>
   </footer>
   <script>
@@ -828,5 +838,6 @@
     secs.forEach(function (el) { io.observe(el); });
   })();
   </script>
+  <script src="assets/hungry-bear/embed.js?v=1" defer></script>
 </body>
 </html>
